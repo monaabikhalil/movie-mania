@@ -7,6 +7,13 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+const users = require('./routes/users');
+app.use('/users', users);
+
+const movies = require('./routes/movies');
+app.use('/movies', movies);
+
+
 app.get('/', (req, res) => {
     res.send("root is listening");
 });
